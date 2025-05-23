@@ -1,0 +1,437 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="27.0.8">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1418" dy="1931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-0" value="传统深度学习流程" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="60" width="330" height="2046" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-1" value="1. 输入数据预处理" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="46" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-2" value="电: 数据加载（CPU/内存）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="47" y="199" width="252" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-3" value="电: 张量转换（GPU显存）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="51" y="328" width="245" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-4" value="2. 卷积计算" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="457" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-5" value="电: CUDA核心执行矩阵乘法（im2col优化）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="610" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-6" value="3. 数据转换" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="763" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-7" value="无直接对应（数据始终为数字形式）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="916" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-8" value="4. 非线性激活与池化" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="1069" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-9" value="电: GPU执行ReLU和MaxPool2d" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="1222" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-10" value="5. 全连接层" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="1375" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-11" value="电: GPU执行单次矩阵乘法（nn.Linear）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="1528" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-12" value="6. 分类输出" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="43" y="1681" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-13" value="电: GPU计算LogSoftmax" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="57" y="1834" width="232" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-14" value="电: Argmax选择类别" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-0">
+          <mxGeometry x="71" y="1963" width="204" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-15" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-1" target="cyLhGTGyLzDkFztHbBa8-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-2" target="cyLhGTGyLzDkFztHbBa8-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-17" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-3" target="cyLhGTGyLzDkFztHbBa8-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-18" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-4" target="cyLhGTGyLzDkFztHbBa8-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-19" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-5" target="cyLhGTGyLzDkFztHbBa8-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-20" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-6" target="cyLhGTGyLzDkFztHbBa8-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-21" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-7" target="cyLhGTGyLzDkFztHbBa8-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-22" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-8" target="cyLhGTGyLzDkFztHbBa8-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-23" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-9" target="cyLhGTGyLzDkFztHbBa8-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-24" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-10" target="cyLhGTGyLzDkFztHbBa8-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-25" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-11" target="cyLhGTGyLzDkFztHbBa8-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-26" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-12" target="cyLhGTGyLzDkFztHbBa8-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-27" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-0" source="cyLhGTGyLzDkFztHbBa8-13" target="cyLhGTGyLzDkFztHbBa8-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-28" value="光芯片流程" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="510" width="330" height="2433" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-29" value="1. 输入数据预处理" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="46" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-30" value="电: AWG生成电信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="73" y="199" width="199" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-31" value="光电: EOM调制为光信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="58" y="328" width="229" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-32" value="2. 卷积计算" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="457" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-33" value="光: 波长编码权重" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="82" y="610" width="183" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-34" value="光: 色散延迟实现滑动窗口卷积" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="739" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-35" value="3. 数据转换" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="892" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-36" value="电: ADC转换光信号为数字信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="1045" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-37" value="4. 非线性激活与池化" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="1198" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-38" value="电: DSP执行ReLU和最大池化" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="1351" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-39" value="5. 全连接层" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="1504" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-40" value="光电: 分块加载权重（72波长/块）" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="1657" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-41" value="光: 光加权求和" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="90" y="1810" width="167" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-42" value="电: 电子累加" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="98" y="1939" width="151" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-43" value="6. 分类输出" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="43" y="2068" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-44" value="电: 多通道ADC检测光强" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="59" y="2221" width="228" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-45" value="电: 比较器选择最大值" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="cyLhGTGyLzDkFztHbBa8-28">
+          <mxGeometry x="66" y="2350" width="215" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-46" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-29" target="cyLhGTGyLzDkFztHbBa8-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-47" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-30" target="cyLhGTGyLzDkFztHbBa8-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-48" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-31" target="cyLhGTGyLzDkFztHbBa8-32">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-49" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-32" target="cyLhGTGyLzDkFztHbBa8-33">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-50" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-33" target="cyLhGTGyLzDkFztHbBa8-34">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-51" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-34" target="cyLhGTGyLzDkFztHbBa8-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-52" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-35" target="cyLhGTGyLzDkFztHbBa8-36">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-53" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-36" target="cyLhGTGyLzDkFztHbBa8-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-54" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-37" target="cyLhGTGyLzDkFztHbBa8-38">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-55" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-38" target="cyLhGTGyLzDkFztHbBa8-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-56" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-39" target="cyLhGTGyLzDkFztHbBa8-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-57" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-40" target="cyLhGTGyLzDkFztHbBa8-41">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-58" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-41" target="cyLhGTGyLzDkFztHbBa8-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-59" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-42" target="cyLhGTGyLzDkFztHbBa8-43">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-60" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-43" target="cyLhGTGyLzDkFztHbBa8-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-61" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="cyLhGTGyLzDkFztHbBa8-28" source="cyLhGTGyLzDkFztHbBa8-44" target="cyLhGTGyLzDkFztHbBa8-45">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-62" value="分类输出" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="97" y="3930" width="285" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-63" value="全连接层" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="105" y="3568" width="269" height="312" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-64" value="非线性激活与池化" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="103" y="3310" width="273" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-65" value="数据转换" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="107" y="3156" width="266" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-66" value="卷积计算" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="97" y="2898" width="285" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-67" value="输入数据预处理" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="90" y="2640" width="299" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-68" value="电: AWG生成电信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="2665" width="199" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-69" value="光电: EOM调制为光信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="125" y="2769" width="229" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-70" value="光: 波长编码权重" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="148" y="2923" width="183" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-71" value="光: 色散延迟滑动卷积" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="132" y="3027" width="215" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-72" value="电: ADC转换光信号" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="142" y="3181" width="196" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-73" value="电: DSP执行ReLU" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="149" y="3335" width="181" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-74" value="电: DSP执行MaxPool" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="138" y="3439" width="203" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-75" value="光电: 分块加载权重" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="3593" width="199" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-76" value="光: 光加权求和" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="156" y="3697" width="167" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-77" value="电: 电子累加" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="164" y="3801" width="151" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-78" value="电: 多通道ADC检测" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="142" y="3955" width="196" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-79" value="电: 比较器选择最大值" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="132" y="4059" width="215" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-80" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-68" target="cyLhGTGyLzDkFztHbBa8-69">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-81" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-70" target="cyLhGTGyLzDkFztHbBa8-71">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-82" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-73" target="cyLhGTGyLzDkFztHbBa8-74">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-83" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-75" target="cyLhGTGyLzDkFztHbBa8-76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-84" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-76" target="cyLhGTGyLzDkFztHbBa8-77">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-85" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-78" target="cyLhGTGyLzDkFztHbBa8-79">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-86" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-69" target="cyLhGTGyLzDkFztHbBa8-70">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-87" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-71" target="cyLhGTGyLzDkFztHbBa8-72">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-88" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-72" target="cyLhGTGyLzDkFztHbBa8-73">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-89" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-74" target="cyLhGTGyLzDkFztHbBa8-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-90" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-77" target="cyLhGTGyLzDkFztHbBa8-78">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-91" value="分类输出" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="492" y="3464" width="240" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-92" value="全连接层" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="470" y="3310" width="283" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-93" value="非线性激活与池化" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="504" y="3052" width="215" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-94" value="卷积计算" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="481" y="2898" width="260" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-95" value="输入数据预处理" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="501" y="2640" width="221" height="208" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-96" value="电: 数据加载" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="536" y="2665" width="151" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-97" value="电: 张量转换" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="536" y="2769" width="151" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-98" value="电: CUDA矩阵乘法" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="516" y="2923" width="190" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-99" value="电: ReLU" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="550" y="3077" width="123" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-100" value="电: MaxPool" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="539" y="3181" width="145" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-101" value="电: GPU单次矩阵乘法" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="505" y="3335" width="213" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-102" value="电: LogSoftmax" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="527" y="3489" width="170" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-103" value="电: Argmax" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="541" y="3593" width="140" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-104" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-96" target="cyLhGTGyLzDkFztHbBa8-97">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-105" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-99" target="cyLhGTGyLzDkFztHbBa8-100">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-106" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-102" target="cyLhGTGyLzDkFztHbBa8-103">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-107" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-97" target="cyLhGTGyLzDkFztHbBa8-98">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-108" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-98" target="cyLhGTGyLzDkFztHbBa8-99">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-109" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-100" target="cyLhGTGyLzDkFztHbBa8-101">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cyLhGTGyLzDkFztHbBa8-110" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="cyLhGTGyLzDkFztHbBa8-101" target="cyLhGTGyLzDkFztHbBa8-102">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
